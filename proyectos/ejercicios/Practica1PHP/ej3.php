@@ -108,14 +108,7 @@
           <h5 class="card-title">' . $valor["nombre"] . '</h5>
           <p class="card-text">' . $valor["desc"] . '</p>
         </div>';
-/*
-        echo '<h5 class="card-title"> Habilidades </h5>';
-        foreach($valor["habilidades"] as $hab){
-          echo '<ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex align-items-center justify-content-between">' . $hab . ' <img src="./ej3img/habilidad.png" alt="habilidad" height="40" gap="30"></li>
-          </ul>';
-        }
-*/
+
         echo '<h5 class="card-title"> Habilidades </h5>';
         foreach($valor["habilidades"] as $hab){
           echo '<ul class="list-group list-group-flush">
