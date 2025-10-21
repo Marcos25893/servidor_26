@@ -35,13 +35,15 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image text-center">
+                                <img src="img/logo.png" alt="" style="max-height: 100%; max-width: 100%;">
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bienvenido de Vuelta</h1>
                                     </div>
-                                    <form action="login.php" method="post" class="user" >
+                                    <form action="controlador.php" method="post" class="user" >
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -51,22 +53,9 @@
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password" name="password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck" name="checkbox">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <a href="tables.php" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <input class="btn btn-primary btn-user btn-block" type="submit" name="login" value="Login">
                                     
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="register.php">Create an Account!</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -78,6 +67,13 @@
         </div>
 
     </div>
+
+
+
+
+
+
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
