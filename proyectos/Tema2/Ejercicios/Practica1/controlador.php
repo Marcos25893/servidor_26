@@ -16,12 +16,22 @@
             $_SESSION['usuario']=$_REQUEST['email'];
 
             $_SESSION['proyectos']=array(
-                array("name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "start_date" => "2011/04/25", "salary" => "$320,800"),
-                array("name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "start_date" => "2011/04/25", "salary" => "$320,800"),
-                array("name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "start_date" => "2011/04/25", "salary" => "$320,800"),
-                array("name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "start_date" => "2011/04/25", "salary" => "$320,800")
+                array("id" => "0001", "name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "salary" => "$320,800"),
+                array("id" => "0002", "name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "salary" => "$320,800"),
+                array("id" => "0003", "name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "salary" => "$320,800"),
+                array("id" => "0004", "name" => "Tiger Nixon", "position" => "System Architect", "office" => "Edinburgh", "age" => 61, "salary" => "$320,800")
             );
 
             header("Location: proyectos.php");
         }
     }
+
+    if(isser($_REQUEST("nuevoProyecto"))){
+        $proyecto = array("id" => $_REQUEST["id"], "name"=> $_REQUEST["nombre"], "position"=> $_REQUEST["posicion"], "office"=> $_REQUEST["oficina"],
+         "age"=> $_REQUEST["edad"], "salary"=> $_REQUEST["salario"] );
+        array_push($_SESSION['proyectos'], $proyecto);
+
+        header("Location: proyectos.php");
+    }
+
+    
