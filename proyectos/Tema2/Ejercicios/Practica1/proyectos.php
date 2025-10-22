@@ -25,52 +25,25 @@
                                         <th>Salary</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
-                                    </tr>
-                                </tfoot>
+                            
                                 <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
+                                    <?php
+                                        foreach($_SESSION['proyectos'] as $proyecto){
+                                            echo "<tr>";
+                                                echo "<td>" . $proyecto['name'] . "</td>";
+                                                echo "<td>" . $proyecto['position'] . "</td>";
+                                                echo "<td>" . $proyecto['office'] . "</td>";
+                                                echo "<td>" . $proyecto['age'] . "</td>";
+                                                echo "<td>" . $proyecto['start_date'] . "</td>";
+                                                echo "<td>" . $proyecto['salary'] . "</td>";
+                                            echo "</tr>";
+                                        }
+                                    ?>
                                     
                                 </tbody>
                             </table>
+
+
                         </div>
                     </div>
                 </div>

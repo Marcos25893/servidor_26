@@ -6,10 +6,11 @@
     if(isset($_REQUEST["login"])){
 
         $pass=strlen($_REQUEST['password']);
+        $mayuscula=strtolower($_REQUEST['password']);
 
-        if($pass<=8){
-            echo "La contraseña tiene que tener mas de 8 caracteres y al menos una mayúscula";
-           // header("Location: login.php");
+        if(($pass<=8) || ($_REQUEST['password']==$mayuscula)){
+            header("Location: login.php");
+            
         }else{
 
             $_SESSION['usuario']=$_REQUEST['email'];
