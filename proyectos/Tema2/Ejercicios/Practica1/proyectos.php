@@ -1,4 +1,4 @@
-<?php include 'cabezera.php'; ?>
+<?php include_once('cabecera.php'); ?>
 
             <div class="container-fluid">
 
@@ -6,13 +6,13 @@
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <button type="button" class="btn btn-primary btn-sm mb-2 me-2" data-bs-toggle="modal" data-bs-target="#nuevoProyecto">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nuevoProyecto">
                             Nuevo Proyecto
                         </button>
-                        <button type="button" class="btn btn-warning btn-sm mb-2 me-2" data-bs-toggle="modal" data-bs-target="#eliminarId">
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#eliminarId">
                             Eliminar
                         </button>
-                        <button type="button" class="btn btn-danger btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#eliminarTodo">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarTodo">
                             Eliminar todos
                         </button>
                     </div>
@@ -22,11 +22,10 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Salary</th>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Año</th>
+                                        <th>Coste</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -37,13 +36,12 @@
                                         foreach($_SESSION['proyectos'] as $proyecto){
                                             echo "<tr>";
                                                 echo "<td>" . $proyecto['id'] . "</td>";
-                                                echo "<td>" . $proyecto['name'] . "</td>";
-                                                echo "<td>" . $proyecto['position'] . "</td>";
-                                                echo "<td>" . $proyecto['office'] . "</td>";
-                                                echo "<td>" . $proyecto['age'] . "</td>";
-                                                echo "<td>" . $proyecto['salary'] . "</td>";
+                                                echo "<td>" . $proyecto['nombre'] . "</td>";
+                                                echo "<td>" . $proyecto['descripcion'] . "</td>";
+                                                echo "<td>" . $proyecto['ano'] . "</td>";
+                                                echo "<td>" . $proyecto['coste'] . "</td>";
                                                 echo "<td>";
-                                                    echo "<a class='btn btn-success me-2' href='controlador.php?accion=verProyecto&dni=" . $proyecto['id'] . "'><i class='fa-solid fa-eye'></i></a>";
+                                                    echo "<a class='btn btn-success me-2' href='controlador.php?accion=verProyecto&id=" . $proyecto['id'] . "'><i class='fa-solid fa-eye'></i></a>";
 
                                                     echo "<a class='btn btn-danger' href='controlador.php?accion=delProyecto&posicion=" . $posicion . "'><i class='fa-solid fa-trash'></i></a>"; "</td>";
                                             echo "</tr>";
@@ -69,4 +67,4 @@
 
 </div>
 
-<?php include_once 'pie.php'; ?>
+<?php include_once ('pie.php'); ?>
