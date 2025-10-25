@@ -19,11 +19,13 @@
             $_SESSION['usuario']=$_REQUEST['email'];
 
             $_SESSION['proyectos']=array(
-                array("id" => "1", "nombre" => "Sistema de Inventario", "descripcion" => "Control de stock", "ano" => "2023", "coste" => "2,500"),
-                array("id" => "2", "nombre" => "Portal de Empleados", "descripcion" => "Gestión de personal", "ano" => "2025", "coste" => "3,200"),
-                array("id" => "3", "nombre" => "App de Reservas", "descripcion" => "Reservas online", "ano" => "2021", "coste" => "2,800"),
-                array("id" => "4", "nombre" => "Tienda Online", "descripcion" => "Venta de productos", "ano" => "2022", "coste" => "3,600")
+                array("id"=>"1","nombre"=>"Sistema de Inventario","fechaInicio"=>"2023-01-10","fechaFinPrevista"=>"2023-06-30","diasTranscurridos"=>"172","porcentajeCompletado"=>"100","importancia"=>"4"),
+                array("id"=>"2","nombre"=>"Portal de Empleados","fechaInicio"=>"2025-02-01","fechaFinPrevista"=>"2025-12-15","diasTranscurridos"=>"200","porcentajeCompletado"=>"60","importancia"=>"5"),
+                array("id"=>"3","nombre"=>"App de Reservas","fechaInicio"=>"2021-03-05","fechaFinPrevista"=>"2021-09-20","diasTranscurridos"=>"199","porcentajeCompletado"=>"100","importancia"=>"3"),
+                array("id"=>"4","nombre"=>"Tienda Online","fechaInicio"=>"2022-04-12","fechaFinPrevista"=>"2022-11-30","diasTranscurridos"=>"232","porcentajeCompletado"=>"100","importancia"=>"4")
             );
+
+            
 
             header("Location: proyectos.php");
         }
@@ -32,10 +34,11 @@
     //Crea un nuevo Proyecto, a partir de los datos recogidos en el modal
     if(isset($_REQUEST["nuevoProyecto"])){
         
-        $contador=count($_SESSION['proyectos']) + 1;
+        $contador = count($_SESSION['proyectos']);
+        
 
-        $proyecto = array("id" => $contador, "nombre"=> $_REQUEST["nombre"], "descripcion"=> $_REQUEST["descripcion"],
-        "ano"=>$_REQUEST["ano"], "coste"=> $_REQUEST["coste"]);
+        $proyecto = array("id" => $contador, "nombre"=> $_REQUEST["nombre"], "fechaInicio"=> $_REQUEST["fechaInicio"],"fechaFinPrevista"=>$_REQUEST["fechaFinPrevista"],
+        "diasTranscurridos"=> $_REQUEST["diasTranscurridos"], "porcentajeCompletado"=> $_REQUEST["porcentajeCompletado"], "importancia"=> $_REQUEST["importancia"]);
         array_push($_SESSION['proyectos'], $proyecto);
 
         header("Location: proyectos.php");
@@ -105,13 +108,16 @@
                 foreach($_SESSION['proyectos'] as $proyecto){
                     if(strcmp($proyecto['id'], $_REQUEST['id'])==0){
                         $nombre = $proyecto['nombre'];
-                        $descrip = $proyecto['descripcion'];
-                        $ano = $proyecto['ano'];
-                        $coste = $proyecto['coste'];
+                        $fechaInicio = $proyecto['fechaInicio'];
+                        $fechaFinPrevista = $proyecto['fechaFinPrevista'];
+                        $diasTranscurridos = $proyecto['diasTranscurridos'];
+                        $porcentajeCompletado = $proyecto['porcentajeCompletado'];
+                        $importancia = $proyecto['importancia'];
                     }
                 }
 
-                header("Location: verProyecto.php?id=" . $_REQUEST['id'] . "&nombre=" . $nombre . "&descripcion=" . $descrip . "&ano=" . $ano . "&coste=" . $coste);
+                header("Location: verProyecto.php?id=" . $_REQUEST['id'] . "&nombre=" . $nombre . "&fechaInicio=" . $fechaInicio . "&fechaFinPrevista=" . $fechaFinPrevista .
+                "&diasTranscurridos=" . $diasTranscurridos . "&porcentajeCompletado=" . $porcentajeCompletado . "&importancia=" . $importancia);
                 break;
 
             default: 

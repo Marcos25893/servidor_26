@@ -14,9 +14,11 @@
     </h5>
     <p class="card-text">
         <?php
-        echo "Descripción del Proyecto: " . $_REQUEST['descripcion']; 
-        echo "<br> Año de realización: " . $_REQUEST['ano']; 
-        echo "<br> Coste del Proyecto: " . $_REQUEST['coste'] . "€"; 
+          echo "Fecha de inicio: " . $_REQUEST['fechaInicio']; 
+          echo "<br> Fecha fin prevista: " . $_REQUEST['fechaFinPrevista']; 
+          echo "<br> Días transcurridos: " . $_REQUEST['diasTranscurridos']; 
+          echo "<br> Porcentaje completado: " . $_REQUEST['porcentajeCompletado'] . "%"; 
+          echo "<br> Importancia: " . $_REQUEST['importancia'];
         ?>
     </p>
     <a href="proyectos.php" class="btn btn-primary">Volver</a>

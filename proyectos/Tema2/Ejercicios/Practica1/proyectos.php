@@ -23,10 +23,11 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
-                                        <th>Descripción</th>
-                                        <th>Año</th>
-                                        <th>Coste</th>
-                                        <th>Acciones</th>
+                                        <th>Fecha Inicio</th>
+                                        <th>Fecha Fin Prevista</th>
+                                        <th>Días Transcurridos</th>
+                                        <th>% Completado</th>
+                                        <th>Importancia 1-5</th>
                                     </tr>
                                 </thead>
                             
@@ -37,9 +38,11 @@
                                             echo "<tr>";
                                                 echo "<td>" . $proyecto['id'] . "</td>";
                                                 echo "<td>" . $proyecto['nombre'] . "</td>";
-                                                echo "<td>" . $proyecto['descripcion'] . "</td>";
-                                                echo "<td>" . $proyecto['ano'] . "</td>";
-                                                echo "<td>" . $proyecto['coste'] . "</td>";
+                                                echo "<td>" . $proyecto['fechaInicio'] . "</td>";
+                                                echo "<td>" . $proyecto['fechaFinPrevista'] . "</td>";
+                                                echo "<td>" . $proyecto['diasTranscurridos'] . "</td>";
+                                                echo "<td>" . $proyecto['porcentajeCompletado'] . "%</td>";
+                                                echo "<td>" . $proyecto['importancia'] . "</td>";
                                                 echo "<td>";
                                                     echo "<a class='btn btn-success me-2' href='controlador.php?accion=verProyecto&id=" . $proyecto['id'] . "'><i class='fa-solid fa-eye'></i></a>";
 

@@ -16,6 +16,7 @@ session_start();
         switch($_REQUEST['accion']){
             case 'sacar':
 
+                
                 array_push($_SESSION['cartas'], $baraja[0]);
                 unset($baraja[0]);
 

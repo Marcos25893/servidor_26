@@ -10,21 +10,41 @@
 
                  <form action="controlador.php" method="POST" id="fnp">
                      <div class="form-floating">
-                         <input type="text" class="form-control" name="nombre">
-                         <label for="floatingInput">Nombre</label>
-                     </div>
-                     <div class="form-floating">
-                         <input type="text" class="form-control" name="descripcion">
-                         <label for="floatingInput">Descripción</label>
-                     </div>
-                     <div class="form-floating">
-                         <input type="text" class="form-control" name="ano">
-                         <label for="floatingInput">Año</label>
-                     </div>
-                     <div class="form-floating">
-                         <input type="text" class="form-control" name="coste">
-                         <label for="floatingInput">Coste</label>
-                     </div>
+                        <input type="text" class="form-control" name="nombre" required>
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="date" class="form-control" name="fechaInicio" required>
+                        <label for="floatingInput">Fecha de Inicio</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="date" class="form-control" name="fechaFinPrevista" required>
+                        <label for="floatingInput">Fecha Fin Prevista</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="number" class="form-control" name="diasTranscurridos" min="0" required>
+                        <label for="floatingInput">Días Transcurridos</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="number" class="form-control" name="porcentajeCompletado" min="0" max="100" required>
+                        <label for="floatingInput">% Completado</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <select class="form-control" name="importancia" required>
+                            <option value="">Selecciona importancia</option>
+                            <option value="1">1 - Muy baja</option>
+                            <option value="2">2 - Baja</option>
+                            <option value="3">3 - Media</option>
+                            <option value="4">4 - Alta</option>
+                            <option value="5">5 - Muy alta</option>
+                        </select>
+                        <label for="floatingInput">Importancia</label>
+                    </div>
                  </form>
 
              </div>
