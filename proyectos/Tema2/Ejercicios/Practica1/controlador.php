@@ -19,25 +19,26 @@
             $_SESSION['usuario']=$_REQUEST['email'];
 
             $_SESSION['proyectos']=array(
-                array("id"=>"1","nombre"=>"Sistema de Inventario","fechaInicio"=>"2023-01-10","fechaFinPrevista"=>"2023-06-30","diasTranscurridos"=>"172","porcentajeCompletado"=>"100","importancia"=>"4"),
-                array("id"=>"2","nombre"=>"Portal de Empleados","fechaInicio"=>"2025-02-01","fechaFinPrevista"=>"2025-12-15","diasTranscurridos"=>"200","porcentajeCompletado"=>"60","importancia"=>"5"),
-                array("id"=>"3","nombre"=>"App de Reservas","fechaInicio"=>"2021-03-05","fechaFinPrevista"=>"2021-09-20","diasTranscurridos"=>"199","porcentajeCompletado"=>"100","importancia"=>"3"),
-                array("id"=>"4","nombre"=>"Tienda Online","fechaInicio"=>"2022-04-12","fechaFinPrevista"=>"2022-11-30","diasTranscurridos"=>"232","porcentajeCompletado"=>"100","importancia"=>"4")
-            );
+            array("id"=>"1","nombre"=>"Sistema de Inventario","fechaInicio"=>"2025-09-01","fechaFinPrevista"=>"2026-03-01","diasTranscurridos"=>"45","porcentajeCompletado"=>"25","importancia"=>"4"),
+            array("id"=>"2","nombre"=>"Portal de Empleados","fechaInicio"=>"2025-07-01","fechaFinPrevista"=>"2025-12-31","diasTranscurridos"=>"120","porcentajeCompletado"=>"50","importancia"=>"5"),
+            array("id"=>"3","nombre"=>"App de Reservas","fechaInicio"=>"2025-04-01","fechaFinPrevista"=>"2025-10-01","diasTranscurridos"=>"180","porcentajeCompletado"=>"75","importancia"=>"3"),
+            array("id"=>"4","nombre"=>"Tienda Online","fechaInicio"=>"2024-01-10","fechaFinPrevista"=>"2024-06-30","diasTranscurridos"=>"172","porcentajeCompletado"=>"100","importancia"=>"4")
+        );
 
-            
+            $_SESSION['id'] = count($_SESSION['proyectos']);
 
             header("Location: proyectos.php");
         }
     }
 
+    
     //Crea un nuevo Proyecto, a partir de los datos recogidos en el modal
     if(isset($_REQUEST["nuevoProyecto"])){
         
-        $contador = count($_SESSION['proyectos']);
         
+        $_SESSION['id']++;
 
-        $proyecto = array("id" => $contador, "nombre"=> $_REQUEST["nombre"], "fechaInicio"=> $_REQUEST["fechaInicio"],"fechaFinPrevista"=>$_REQUEST["fechaFinPrevista"],
+        $proyecto = array("id" => $_SESSION['id'], "nombre"=> $_REQUEST["nombre"], "fechaInicio"=> $_REQUEST["fechaInicio"],"fechaFinPrevista"=>$_REQUEST["fechaFinPrevista"],
         "diasTranscurridos"=> $_REQUEST["diasTranscurridos"], "porcentajeCompletado"=> $_REQUEST["porcentajeCompletado"], "importancia"=> $_REQUEST["importancia"]);
         array_push($_SESSION['proyectos'], $proyecto);
 

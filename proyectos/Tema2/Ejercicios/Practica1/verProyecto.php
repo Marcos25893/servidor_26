@@ -17,7 +17,9 @@
           echo "Fecha de inicio: " . $_REQUEST['fechaInicio']; 
           echo "<br> Fecha fin prevista: " . $_REQUEST['fechaFinPrevista']; 
           echo "<br> Días transcurridos: " . $_REQUEST['diasTranscurridos']; 
-          echo "<br> Porcentaje completado: " . $_REQUEST['porcentajeCompletado'] . "%"; 
+          echo "<br> <div class='progress' role='progressbar' aria-label='Basic example' aria-valuenow='0' aria-valuemin='0' aria-valuemax='100'>
+                  <div class='progress-bar' style='width: " . $_REQUEST['porcentajeCompletado'] . "%'></div>
+                </div> "; 
           echo "<br> Importancia: " . $_REQUEST['importancia'];
         ?>
     </p>
