@@ -16,13 +16,18 @@ session_start();
         switch($_REQUEST['accion']){
             case 'sacar':
 
-                
-                array_push($_SESSION['cartas'], $baraja[0]);
-                unset($baraja[0]);
-
                 $suma = sumarCartas($_SESSION['cartas']);
-                
-                header ('Location: juego.php?suma=' . $suma .'');
+                if($suma<7.5){
+                    array_push($_SESSION['cartas'], $baraja[0]);
+                    unset($baraja[0]);
+                    
+                    $suma = sumarCartas($_SESSION['cartas']);
+                    header ('Location: juego.php?suma=' . $suma .'');
+                    
+                }else{
+                    header ('Location: juego.php?suma=' . $suma .'');
+                }
+
                 break;
 
             case 'reiniciar':
