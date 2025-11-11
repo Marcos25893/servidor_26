@@ -6,7 +6,7 @@
         <div class="m-auto mt-4" style="width: 70vw; height: 70vh;">
             <h1 class="text-center mb-5">Gestor de Incidencias</h1>
 
-            <form action="controlador.php" method="post" class="d-flex">
+            <form action="controlador.php?accion=filtrar" method="post" class="d-flex">
                 <legend>Filtrar:</legend>
                 <select class="form-select me-2" aria-label="Default select example" name='Estado'>
                 <option selected >Estado</option>
@@ -35,13 +35,13 @@
                 <option value="Crítica">Crítica</option>
                 </select>
 
-                <input class="btn btn-primary" type="submit" value="Filtrar" name="filtrar">
+                <input class="btn btn-primary" type="submit" value="Filtrar">
             </form>
 
-            <form action="controlador.php" methop="post" class="d-flex justify-content-end mt-3 mb-3">
+            <form action="controlador.php?accion=buscar" methop="post" class="d-flex justify-content-end mt-3 mb-3">
                 <label for="" class="me-2">Buscar Incidencia:</label>
                 <input type="search" name="busqueda" style="width: 19vw;" class="me-2">
-                <button type="submit" name="buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CrearIncidencia">
@@ -69,8 +69,8 @@
                         echo '<td>' . $incidencia['prioridad'] .'</td>';
                         echo '<td>' . $incidencia['fecha_creacion'] .'</td>';
                         echo '<td>';
-                        echo "<a class='btn btn-success me-2' href='controlador.php?accion=verIncidencia&id=" . $incidencia['id_incidencia'] . "'><i class='fa-solid fa-eye'></i></a>";
-                        echo "<a class='btn btn-danger' href='controlador.php?accion=delIncidencia&id=" . $incidencia['id_incidencia'] . "'><i class='fa-solid fa-trash'></i></a>"; 
+                        echo '<button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#VerIncidencia"><i class="fa-solid fa-eye"></i></button>';
+                        echo '<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#BorrarIncidencia"><i class="fa-solid fa-trash"></i></button>';
                         echo "</td>";
                         echo '</tr>';
                     }

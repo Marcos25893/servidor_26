@@ -26,7 +26,7 @@ session_start();
         </div>
 
         <div class="ms-5">
-            <form action="controlador.php" method="post">
+            <form action="controlador.php?accion=login" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
                 <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
@@ -36,7 +36,7 @@ session_start();
                 <input type="password" class="form-control" name="password">
             </div>
             <a href="register.php" class="btn btn-warning">Crear Cuenta</a>
-            <input type="submit" class="btn btn-primary" value="Enviar" name="enviar">
+            <input type="submit" class="btn btn-primary" value="Enviar">
             
             </form>
         </div>

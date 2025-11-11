@@ -24,7 +24,7 @@ session_start();
         </div>
 
         <div class="ms-5">
-            <form action="controlador.php" method="post">
+            <form action="controlador.php?accion=NuevoTecnico" method="post">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
                 <input type="nombre" class="form-control" name="nombre" required>
@@ -38,7 +38,7 @@ session_start();
                 <input type="password" class="form-control" name="password" required>
             </div>
             
-            <input type="submit" class="btn btn-primary" value="Crear Cuenta" name="crear">
+            <input type="submit" class="btn btn-primary" value="Crear Cuenta">
             <a href="login.php" class="btn btn-success">Ya tengo Cuenta</a>
             </form>
 
